@@ -1,0 +1,11 @@
+<section class="row row-cols-3 align-items-start" >
+  <article class="card col border-2 p-0" *ngFor="let gif of gifs">
+    <img [src]="gif.images.downsized.url" alt="images" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text" [textContent]="gif.title">title</p>
+    </div>
+  </article>
+
+</section>
+
+
