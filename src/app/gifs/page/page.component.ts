@@ -8,24 +8,12 @@ import { Gif } from '../../shared/interfaces/giphy.interface';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit,OnDestroy{
-  gifs:Gif[]=[];
-  subscription: Subscription = new Subscription;
+export class PageComponent{
 
   constructor(private service:GiphyService){};
 
-  ngOnInit(): void {
-    this.subscription = this.service.getGifs().subscribe((response: Gif[]) => {
-      console.log(response);
-      this.gifs = response;
-
-    });
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-
-
+get gifs(){
+  return this.service.gifs;
+}
 
 }

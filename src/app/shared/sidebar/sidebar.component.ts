@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GiphyService } from '../services/giphy.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+
+  constructor(private servicio: GiphyService){}
+
+  get historial(){
+    return this.servicio.historial;
+  }
 
 }
