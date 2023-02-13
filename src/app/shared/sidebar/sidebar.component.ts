@@ -13,5 +13,8 @@ export class SidebarComponent {
   get historial(){
     return this.servicio.historial;
   }
+  get servicio1(){
+    return this.servicio;
+  }
 
 }
